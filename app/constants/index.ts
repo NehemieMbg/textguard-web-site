@@ -8,13 +8,13 @@ export const sideNavigation = [
   {
     title: 'Getting started',
     links: [
-      { href: '/docs', label: 'Getting Started' },
+      { href: '/docs', label: 'Introduction' },
       { href: '/docs/installation', label: 'Installation' },
       { href: '/docs/quick-start', label: 'Quick Start' },
     ],
   },
   {
     title: 'Validation',
-    links: [{ href: '/docs/', label: 'String Validation' }],
+    links: [{ href: '/docs/validation', label: 'String Validation' }],
   },
 ];

@@ -17,4 +17,18 @@
     max-width: 1440px;
     margin: 0 auto;
   }
+
+  .heading {
+    font-size: 28px;
+    font-weight: 500;
+    color: white;
+    font-family: inherit;
+  }
+}
+
+html {
+}
+
+.body {
+  background-color: rgb(24 24 27);
 }
