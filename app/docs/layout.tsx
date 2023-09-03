@@ -6,9 +6,11 @@ export default function layout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="h-full flex">
-      <Navigation></Navigation>
-      <div className="p-8">{children}</div>
+    <section className="h-full flex w-full">
+      <Navigation />
+      <div className="p-8 pb-8 w-full h-full flex justify-center overflow-y-scroll">
+        <div className="max-w-[800px] w-full">{children}</div>
+      </div>
     </section>
   );
 }

@@ -1,6 +1,26 @@
+import Code from '@/app/components/Code';
+
 const page = () => {
+  const npmText = 'npm install @6nehemie/textguard';
+  const npmInstall = (
+    <div>
+      <p>
+        <span className="text-white">npm</span> install @6nehemie/textguard
+      </p>
+    </div>
+  );
+
+  const yarnText = 'yarn add @6nehemie/textguard';
+  const yarnInstall = (
+    <div>
+      <p>
+        <span className="text-white">yarn</span> add @6nehemie/textguard
+      </p>
+    </div>
+  );
+
   return (
-    <section>
+    <section className="pb-16">
       <h1 className="text-white text-3xl font-medium mb-1.5">Installation</h1>
       <h3 className="text-white mb-4">System Requirements:</h3>
 
@@ -22,12 +42,33 @@ const page = () => {
         </li>
       </ul>
 
-      <h2 className="text-xl text-white font-medium mb-4">
+      <h2 className="text-xl text-white font-medium mb-8">
         Quick and Easy Installation Steps
       </h2>
 
       <h3 className="text-white mb-2">Using npm:</h3>
-      <p>To install @§nehemie/textgurad via npm, run the following command:</p>
+      <p className="mb-4">
+        To install @nehemie/textgurad via npm, run the following command:
+      </p>
+
+      <div className="mb-16">
+        <Code label={'Terminal'} text={npmText} code={npmInstall} />
+      </div>
+
+      <h3 className="text-white mb-2">Using yarn:</h3>
+      <p className="mb-4">
+        To install @nehemie/textgurad via npm, run the following command:
+      </p>
+
+      <div className="mb-4">
+        <Code label={'Terminal'} text={yarnText} code={yarnInstall} />
+      </div>
+
+      <p>
+        After installation, you are ready to import{' '}
+        <span className="text-white">@6nehemie/textguard</span> into your
+        project and start laveragin its powerful features.
+      </p>
     </section>
   );
 };

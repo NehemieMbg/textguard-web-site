@@ -48,7 +48,7 @@ const Nav = () => {
 
   return (
     <header className="w-full bg-dark-gray py-3 px-8 border-b-[1px] border-highlight-gray">
-      <nav className="flex gap-6 max-container items-center text-light-gray ">
+      <nav className="flex gap-6 items-center text-light-gray ">
         <Link href={'/docs'}>
           <h1 className="font-md text-sm text-white">{navbar.logo}</h1>
         </Link>
@@ -100,10 +100,10 @@ const Nav = () => {
       </nav>
 
       {inputOpen && (
-        <div className="top-0 left-0 w-full h-full fixed backdrop-blur-sm bg-highlight-gray-200 opacity-[.80] flex justify-center z-10">
+        <div className="top-0 left-0 w-full h-full fixed backdrop-blur-sm bg-highlight-gray-200 flex justify-center z-10">
           <div className="box-content py-[205px] px-[32px] max-w-[576px] w-full">
             <div
-              className="bg-dark-gray flex items-center border-[.5px] border-action-gray rounded-lg"
+              className="bg-dark-gray flex items-center border-[.5px] border-action-gray rounded-lg opacity-100"
               ref={inputDivRef}
             >
               <div className="flex items-center justify-between w-full">
