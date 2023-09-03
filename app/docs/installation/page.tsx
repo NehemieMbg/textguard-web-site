@@ -2,22 +2,7 @@ import Code from '@/app/components/Code';
 
 const page = () => {
   const npmText = 'npm install @6nehemie/textguard';
-  const npmInstall = (
-    <div>
-      <p>
-        <span className="text-white">npm</span> install @6nehemie/textguard
-      </p>
-    </div>
-  );
-
   const yarnText = 'yarn add @6nehemie/textguard';
-  const yarnInstall = (
-    <div>
-      <p>
-        <span className="text-white">yarn</span> add @6nehemie/textguard
-      </p>
-    </div>
-  );
 
   return (
     <section className="pb-16">
@@ -52,7 +37,7 @@ const page = () => {
       </p>
 
       <div className="mb-16">
-        <Code label={'Terminal'} text={npmText} code={npmInstall} />
+        <Code label={'Terminal'} text={npmText} />
       </div>
 
       <h3 className="text-white mb-2">Using yarn:</h3>
@@ -61,7 +46,7 @@ const page = () => {
       </p>
 
       <div className="mb-4">
-        <Code label={'Terminal'} text={yarnText} code={yarnInstall} />
+        <Code label={'Terminal'} text={yarnText} />
       </div>
 
       <p>
