@@ -22,7 +22,7 @@ export default function RootLayout({
       <Providers>
         <body className={`${inter.className}`}>
           <Nav />
-          <main className="flex w-full bg-dark-gray h-[calc(100vh-55px)] text-light-gray font-light overflow-y-scroll">
+          <main className="flex  bg-dark-gray w-full text-light-gray font-light overflow-y-scroll">
             {children}
           </main>
         </body>
