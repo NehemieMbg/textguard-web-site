@@ -46,7 +46,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <header className="w-full bg-dark-gray py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray">
+    <header className="w-full bg-dark-gray py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray top-0 sticky">
       <nav className="flex gap-6 items-center text-light-gray ">
         {!isMenuOpen ? (
           <div
