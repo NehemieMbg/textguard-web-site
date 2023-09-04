@@ -24,7 +24,7 @@ export default function RootLayout({
         <body
           className={`${inter.className} min-h-screen bg-dark-gray grid grid-dispaly`}
         >
-          <header className="w-full bg-dark-gray py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray top-0 sticky">
+          <header className="w-full bg-dark-gray bg-opacity-75 backdrop-blur-sm py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray top-0 sticky">
             <Nav />
           </header>
 

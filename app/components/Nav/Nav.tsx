@@ -95,7 +95,7 @@ const Nav = () => {
 
           <div className="flex gap-6 items-center">
             <div
-              className={`flex items-center justify-between bg-[#282C34] px-[12px] py-1 lg:w-[448px] rounded-full cursor-pointer border-[0.5px] border-highlight-gray hover:border-action-gray-2 transition duration-200
+              className={`flex items-center justify-between bg-[#282C34] bg-opacity-70 px-[12px] py-1 lg:w-[448px] rounded-full cursor-pointer border-[0.5px] border-highlight-gray hover:border-action-gray-2 transition duration-200
               ${pathname === '/' ? 'hidden' : ''}
               `}
               onClick={() => setInputOpen(true)}

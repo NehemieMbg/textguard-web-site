@@ -45,7 +45,7 @@ const SearchTextguard = (props: {
 
   return (
     inputOpen && (
-      <div className="top-0 left-0 w-full h-full fixed backdrop-blur-sm bg-action-gray-200 flex justify-center z-10">
+      <div className="top-0 left-0 w-full h-full fixed backdrop-blur-sm  flex justify-center z-10">
         <div className="box-content py-[205px] px-[32px] max-w-[576px] w-full">
           <div
             className="bg-dark-gray flex items-center border-[.5px] border-action-gray rounded-lg opacity-100"
