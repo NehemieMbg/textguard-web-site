@@ -54,7 +54,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <header className="w-full h-[59px] flex items-center z-30 bg-dark-gray bg-opacity-70 backdrop-blur-md py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray top-0 sticky ">
+    <header className="w-full h-[59px] flex items-center z-30 bg-dark-gray bg-opacity-50 backdrop-blur-md py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray top-0 sticky ">
       <nav className="flex w-full gap-6 items-center text-light-gray ">
         {!isMenuOpen ? (
           <div
