@@ -54,8 +54,8 @@ const Nav = () => {
   }, []);
 
   return (
-    <header className="w-full z-30 bg-dark-gray py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray top-0 sticky">
-      <nav className="flex gap-6 items-center text-light-gray ">
+    <header className="w-full h-[59px] flex items-center z-30 bg-dark-gray py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray top-0 sticky ">
+      <nav className="flex w-full gap-6 items-center text-light-gray ">
         {!isMenuOpen ? (
           <div
             className={`text-white cursor-pointer lg:hidden
@@ -95,9 +95,9 @@ const Nav = () => {
             ))}
           </ul>
 
-          <div className="flex gap-6 items-center">
+          <div className="flex gap-6 items-center max-md:gap-4">
             <div
-              className={`flex items-center justify-between bg-[#282C34] px-[12px] py-1 lg:w-[448px] rounded-full cursor-pointer border-[0.5px] border-highlight-gray hover:border-action-gray-2 transition duration-200
+              className={`flex items-center justify-between bg-[#282C34] px-[12px] max-sm:px-1.5 py-1 lg:w-[448px] rounded-full cursor-pointer border-[0.5px] border-highlight-gray hover:border-action-gray-2 transition duration-200
               ${pathname === '/' ? 'hidden' : ''}
               `}
               onClick={() => setInputOpen(true)}
@@ -120,7 +120,9 @@ const Nav = () => {
               href="https://github.com/NehemieMbg/textGuard"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors duration-200 max-sm:hidden"
+              className={`hover:text-white transition-colors duration-200 
+              ${pathname === '/' ? 'max-sm:visible' : 'max-sm:hidden'}
+              `}
             >
               <GitHub />
             </a>
