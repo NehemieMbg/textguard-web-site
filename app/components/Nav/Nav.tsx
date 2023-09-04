@@ -21,7 +21,6 @@ const Nav = () => {
 
   const pathArray = pathname.split('/');
   const path = pathArray[1];
-  console.log(path);
 
   const [inputOpen, setInputOpen] = useState(false);
   const [isMac, setIsMac] = useState(false);
@@ -53,8 +52,21 @@ const Nav = () => {
     };
   }, []);
 
+  const handleDarkTheme = () => {
+    setThemeValue((prev) => {
+      if (prev === 'dark') document.body.classList.add('light');
+      else document.body.classList.remove('light');
+
+      return prev === 'dark' ? 'light' : 'dark';
+    });
+  };
+
   return (
-    <header className="w-full h-[59px] flex items-center z-30 bg-dark-gray bg-opacity-50 backdrop-blur-md py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray top-0 sticky ">
+    <header
+      className={`w-full h-[59px] flex items-center z-30 bg-opacity-50 backdrop-blur-md py-3 px-8 max-md:px-4  top-0 sticky bg-dark-gray 
+      ${pathname === '/' ? '' : 'border-highlight-gray border-b-[1px] '}
+      `}
+    >
       <nav className="flex w-full gap-6 items-center text-light-gray ">
         {!isMenuOpen ? (
           <div
@@ -98,7 +110,7 @@ const Nav = () => {
           <div className="flex gap-6 items-center max-md:gap-4">
             <div
               className={`flex items-center justify-between bg-[#282C34] bg-opacity-60 px-[12px] max-sm:px-1.5 py-1 lg:w-[448px] rounded-full cursor-pointer border-[0.5px] border-highlight-gray hover:border-action-gray-2 transition duration-200
-              ${pathname === '/' ? 'hidden' : ''}
+
               `}
               onClick={() => setInputOpen(true)}
             >
@@ -127,21 +139,23 @@ const Nav = () => {
               <GitHub />
             </a>
 
-            {themeValue === 'dark' ? (
+            {/* {themeValue === 'dark' ? (
               <div
                 className="hover:text-white transition-colors duration-200 cursor-pointer w-[24px]"
-                onClick={() => setThemeValue('light')}
+                id="toggleLight"
+                onClick={handleDarkTheme}
               >
                 <Sun />
               </div>
             ) : (
               <div
                 className="hover:text-white transition-colors duration-200 cursor-pointer w-[24px]"
-                onClick={() => setThemeValue('dark')}
+                id="toggleLight"
+                onClick={handleDarkTheme}
               >
                 <Moon />
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </nav>

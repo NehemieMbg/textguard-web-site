@@ -30,7 +30,17 @@
   }
 
   .min-height {
-    min-height: calc(100vh - 55px);
+    min-height: calc(100vh - 59px);
+  }
+
+  .dark-theme {
+    color: '#A1A1AA';
+    background-color: rgb(24 24 27);
+  }
+
+  .light-theme {
+    color: '#333'; /* A dark gray text color for better contrast on a light background */
+    background-color: '#F2F2F2'; /* A light gray background that's easy on the eyes */
   }
 }
 
@@ -38,5 +48,5 @@ html {
 }
 
 .body {
-  background-color: rgb(24 24 27);
+  /* background-color: rgb(24 24 27); */
 }

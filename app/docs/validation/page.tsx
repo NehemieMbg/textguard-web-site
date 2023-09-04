@@ -1,4 +1,11 @@
 import Code from '@/app/components/Code';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'String Validation | @nehemie/textguard',
+  description:
+    '@nehemie/textguard documentation to help you build your app and validate the data that you need',
+};
 
 const page = () => {
   const isEmailValid = `import { isValidEmail } from '@6nehemie/textguard';

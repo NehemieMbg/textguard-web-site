@@ -1,4 +1,11 @@
+import { Metadata } from 'next';
 import Navigation from '../components/Navigation/Navigation';
+
+export const metadata: Metadata = {
+  title: 'Docs | @nehemie/textguard',
+  description:
+    '@nehemie/textguard documentation to help you build your app and validate the data that you need',
+};
 
 export default function layout({
   children, // will be a page or nested layout

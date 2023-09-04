@@ -23,7 +23,7 @@ const Footer = () => {
           <ul className="flex gap-32 flex-wrap gap-x-32 gap-y-8 font-light mb-8">
             {footerInfo.navigation.map((navigation) => (
               <li key={navigation.title}>
-                <h3 className="text-white mb-6">{navigation.title}</h3>
+                <h3 className="text-white mb-4">{navigation.title}</h3>
 
                 <ul className="flex flex-col gap-4">
                   {navigation.links.map((link) => (
