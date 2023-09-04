@@ -2,6 +2,7 @@
 
 import { navbar } from '@/app/constants';
 import { useRef, useState, useEffect, useContext } from 'react';
+import { usePathname } from 'next/navigation';
 import { Context } from '@/app/context/context';
 import Link from 'next/link';
 import GitHub from '../icons/GitHub';
@@ -11,9 +12,16 @@ import useClickOutside from '@/app/hooks/useClickOutside';
 import Search from '../icons/Search';
 import Hamburger from '../icons/Hamburger';
 import Xmark from '../icons/Xmark';
+import Moon from '../icons/Moon';
 
 const Nav = () => {
-  const { isMenuOpen, setIsMenuOpen } = useContext(Context);
+  const pathname = usePathname();
+  const { isMenuOpen, setIsMenuOpen, themeValue, setThemeValue } =
+    useContext(Context);
+
+  const pathArray = pathname.split('/');
+  const path = pathArray[1];
+  console.log(path);
 
   const [inputOpen, setInputOpen] = useState(false);
   const [isMac, setIsMac] = useState(false);
@@ -64,7 +72,7 @@ const Nav = () => {
           </div>
         )}
 
-        <Link href={'/docs'}>
+        <Link href={'/'}>
           <h1 className="font-md text-sm text-white">{navbar.logo}</h1>
         </Link>
 
@@ -75,14 +83,21 @@ const Nav = () => {
                 key={link.label}
                 className="hover:text-white transition-colors duration-200 font-light"
               >
-                <Link href={link.href}>{link.label}</Link>
+                <Link
+                  href={link.href}
+                  className={`${'/' + path === link.href ? 'text-white' : ''}`}
+                >
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
 
           <div className="flex gap-6 items-center">
             <div
-              className="flex items-center justify-between bg-[#282C34] px-[12px] py-1 lg:w-[448px] rounded-full cursor-pointer border-[0.5px] border-highlight-gray hover:border-action-gray-2 transition duration-200"
+              className={`flex items-center justify-between bg-[#282C34] px-[12px] py-1 lg:w-[448px] rounded-full cursor-pointer border-[0.5px] border-highlight-gray hover:border-action-gray-2 transition duration-200
+              ${pathname === '/' ? 'hidden' : ''}
+              `}
               onClick={() => setInputOpen(true)}
             >
               <div className="flex items-center gap-2.5">
@@ -108,9 +123,21 @@ const Nav = () => {
               <GitHub />
             </a>
 
-            {/* <div className="hover:text-white transition-colors duration-200 cursor-pointer">
-              <Sun />
-            </div> */}
+            {themeValue === 'dark' ? (
+              <div
+                className="hover:text-white transition-colors duration-200 cursor-pointer w-[24px]"
+                onClick={() => setThemeValue('light')}
+              >
+                <Sun />
+              </div>
+            ) : (
+              <div
+                className="hover:text-white transition-colors duration-200 cursor-pointer w-[24px]"
+                onClick={() => setThemeValue('dark')}
+              >
+                <Moon />
+              </div>
+            )}
           </div>
         </div>
       </nav>

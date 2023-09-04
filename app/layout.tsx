@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body className={`${inter.className}`}>
+        <body className={`${inter.className} min-h-screen bg-dark-gray`}>
           <Nav />
           <main className="flex  bg-dark-gray w-full text-light-gray font-light overflow-y-scroll">
             {children}

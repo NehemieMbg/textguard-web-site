@@ -8,6 +8,7 @@ import { Context } from '@/app/context/context';
 import useClickOutside from '@/app/hooks/useClickOutside';
 
 const Navigation = () => {
+  const pathname = usePathname();
   const { isMenuOpen, setIsMenuOpen } = useContext(Context);
   const navigationRef = useRef<HTMLDivElement | null>(null);
 
@@ -16,14 +17,6 @@ const Navigation = () => {
     // ensure access to window.innerWidth if window exists
     typeof window !== 'undefined' ? window.innerWidth : 1024
   );
-
-  console.log('IsMenuOpen: ', isMenuOpen);
-
-  const pathname = usePathname();
-  console.log(pathname);
-  const pathArray = pathname.split('/');
-  const path = `/${pathArray[pathArray.length - 1]}`;
-  console.log(path);
 
   useClickOutside(navigationRef, () => setIsMenuOpen(false));
 
@@ -85,11 +78,15 @@ const Navigation = () => {
 
               <ul className=" border-l-[1px] border-highlight-gray-200 w-full flex flex-col gap-2">
                 {navigator.links.map((link) => (
-                  <li key={link.label} className="w-full">
+                  <li
+                    key={link.label}
+                    className={`w-full
+                  ${pathname === link.href ? 'text-white' : ''}`}
+                  >
                     <Link
                       href={link.href}
                       className={`w-full text-sm font-light pl-9 block hover:text-slate-100 transition duration-250
-					${`/${path}` === link.href ? 'text-white' : ''}
+                      
 					`}
                       onClick={() => setIsMenuOpen(false)}
                     >

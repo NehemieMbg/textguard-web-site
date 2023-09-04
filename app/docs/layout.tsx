@@ -8,7 +8,7 @@ export default function layout({
   return (
     <section className="h-full flex w-full">
       <Navigation />
-      <div className="p-8 max-md:px-4 pb-8 w-full h-full flex justify-center overflow-y-scroll lg:ml-[320px]">
+      <div className="p-8 max-md:px-4 pb-8 h-full w-full flex justify-center overflow-y-scroll lg:ml-[320px]">
         <div className="max-w-[800px] w-full">{children}</div>
       </div>
     </section>
