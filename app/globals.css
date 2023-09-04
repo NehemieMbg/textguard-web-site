@@ -14,8 +14,12 @@
 
 @layer components {
   .max-container {
-    max-width: 1440px;
+    max-width: 1056px;
     margin: 0 auto;
+  }
+
+  .grid-dispaly {
+    grid-template-rows: max-content 1fr max-content;
   }
 
   .heading {

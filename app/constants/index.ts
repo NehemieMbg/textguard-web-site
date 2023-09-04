@@ -1,5 +1,5 @@
 export const navbar = {
-  logo: 'nehemie/textguard',
+  logo: '@nehemie/textguard',
   version: '0.0.6',
   links: [{ href: '/docs', label: 'Docs' }],
 };
@@ -45,3 +45,30 @@ export const searchResults = [
     link: '/docs/validation',
   },
 ];
+
+export const footerInfo = {
+  logo: 'nehemie/textguard',
+  version: '0.0.6',
+  credit: `© ${new Date().getFullYear()} Nehemie Mombanga`,
+  navigation: [
+    {
+      title: 'Documentation',
+      links: [
+        { href: '/docs', label: 'Introduction' },
+        { href: '/docs/installation', label: 'Installation' },
+        { href: '/docs/quick-start', label: 'Quick Start' },
+      ],
+    },
+    {
+      title: 'Validation',
+      links: [{ href: '/docs/validation', label: 'String Validation' }],
+    },
+  ],
+
+  externalNavigation: {
+    title: 'Community',
+    links: [
+      { href: 'https://github.com/NehemieMbg/textGuard', label: 'GitHub' },
+    ],
+  },
+};

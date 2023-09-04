@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Nav from './components/Nav/Nav';
 import Navigation from './components/Navigation/Navigation';
 import Providers from './providers';
+import Footer from './components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,11 +21,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body className={`${inter.className} min-h-screen bg-dark-gray`}>
-          <Nav />
+        <body
+          className={`${inter.className} min-h-screen bg-dark-gray grid grid-dispaly`}
+        >
+          <header className="w-full bg-dark-gray py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray top-0 sticky">
+            <Nav />
+          </header>
+
           <main className="flex  bg-dark-gray w-full text-light-gray font-light overflow-y-scroll">
             {children}
           </main>
+
+          <footer className="">
+            <Footer />
+          </footer>
         </body>
       </Providers>
     </html>
