@@ -1,7 +1,8 @@
 'use client';
 
 import { navbar } from '@/app/constants';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
+import { Context } from '@/app/context/context';
 import Link from 'next/link';
 import GitHub from '../icons/GitHub';
 import Sun from '../icons/Sun';
@@ -9,13 +10,15 @@ import SearchTextguard from './Search';
 import useClickOutside from '@/app/hooks/useClickOutside';
 import Search from '../icons/Search';
 import Hamburger from '../icons/Hamburger';
+import Xmark from '../icons/Xmark';
 
 const Nav = () => {
+  const { isMenuOpen, setIsMenuOpen } = useContext(Context);
+
   const [inputOpen, setInputOpen] = useState(false);
   const [isMac, setIsMac] = useState(false);
 
   const inputDivRef = useRef<HTMLDivElement | null>(null);
-  const inputRef = useRef<HTMLInputElement | null>(null);
 
   useClickOutside(inputDivRef, () => setInputOpen(false));
 
@@ -45,9 +48,21 @@ const Nav = () => {
   return (
     <header className="w-full bg-dark-gray py-3 px-8 max-md:px-4 border-b-[1px] border-highlight-gray">
       <nav className="flex gap-6 items-center text-light-gray ">
-        <div className="text-white cursor-pointer lg:hidden">
-          <Hamburger />
-        </div>
+        {!isMenuOpen ? (
+          <div
+            className="text-white cursor-pointer lg:hidden"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <Hamburger />
+          </div>
+        ) : (
+          <div
+            className="text-white cursor-pointer lg:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Xmark />
+          </div>
+        )}
 
         <Link href={'/docs'}>
           <h1 className="font-md text-sm text-white">{navbar.logo}</h1>
@@ -77,9 +92,11 @@ const Nav = () => {
                 </p>
               </div>
 
-              <p className="mx-2 lg:hidden">|</p>
+              <p className="mx-2 lg:hidden max-sm:hidden">|</p>
 
-              <p className="text-sm font-light">{isMac ? '⌘K' : 'Ctrl + K'}</p>
+              <p className="text-sm font-light max-sm:hidden">
+                {isMac ? '⌘K' : 'Ctrl + K'}
+              </p>
             </div>
 
             <a

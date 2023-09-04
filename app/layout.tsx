@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Nav from './components/Nav/Nav';
 import Navigation from './components/Navigation/Navigation';
+import Providers from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,12 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <Nav />
-        <main className="flex w-full bg-dark-gray h-[calc(100vh-55px)] text-light-gray font-light">
-          {children}
-        </main>
-      </body>
+      <Providers>
+        <body className={`${inter.className}`}>
+          <Nav />
+          <main className="flex w-full bg-dark-gray h-[calc(100vh-55px)] text-light-gray font-light overflow-y-scroll">
+            {children}
+          </main>
+        </body>
+      </Providers>
     </html>
   );
 }
