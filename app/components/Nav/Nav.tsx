@@ -58,7 +58,9 @@ const Nav = () => {
       <nav className="flex gap-6 items-center text-light-gray ">
         {!isMenuOpen ? (
           <div
-            className="text-white cursor-pointer lg:hidden"
+            className={`text-white cursor-pointer lg:hidden
+            ${pathname === '/' ? 'hidden' : ''}
+            `}
             onClick={() => setIsMenuOpen(true)}
           >
             <Hamburger />
