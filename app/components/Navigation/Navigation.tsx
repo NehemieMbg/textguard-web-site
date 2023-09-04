@@ -12,7 +12,10 @@ const Navigation = () => {
   const navigationRef = useRef<HTMLDivElement | null>(null);
 
   // state of the window width
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(
+    // ensure access to window.innerWidth if window exists
+    typeof window !== 'undefined' ? window.innerWidth : 1024
+  );
 
   console.log('IsMenuOpen: ', isMenuOpen);
 
