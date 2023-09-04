@@ -30,6 +30,14 @@ const SearchTextguard = (props: {
     }
   }, [inputOpen]);
 
+  useEffect(() => {
+    if (inputOpen) {
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    } else {
+      document.body.style.overflow = 'auto'; // Allow scrolling
+    }
+  }, [inputOpen]);
+
   function handleSearch(event: React.ChangeEvent<HTMLInputElement>) {
     const query = event.target.value;
     setQuery(query);
