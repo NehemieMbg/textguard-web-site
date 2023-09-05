@@ -49,7 +49,7 @@ const page = () => {
 
       <h3 className="text-white mb-2">Using yarn:</h3>
       <p className="mb-4">
-        To install @nehemie/textgurad via npm, run the following command:
+        To install @nehemie/textgurad via yarn, run the following command:
       </p>
 
       <div className="mb-4">
